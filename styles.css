@@ -1,0 +1,77 @@
+body {
+    margin: 20px;
+    /*
+    Challenge:
+    Find a web safe font you like, and add it 
+    to your card.
+    */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.avatar {
+    width: 150px;
+    object-fit: fill;
+    border-radius: 5px; 
+}
+
+
+@keyframes wave-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+.card {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background: #222222;
+    color: #f8f8f8;
+    position: relative; 
+}
+
+.card::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px; /* Height of the border */
+  background: linear-gradient(90deg, lightblue, lightcoral, purple);
+  background-size: 200% 200%; /* Make the background large enough to allow the wave effect */
+  animation: wave-animation 4s linear infinite; /* Apply the animation */
+}
+
+.hover {
+  transition: transform 0.3s ease;
+}
+
+.hover:hover {
+  transform: skewX(-10deg);
+  transition: transform 0.3s ease;
+  }
+
+/*
+Stretch goals:
+Find other ways you can personalize 
+the design of your business card, e.g.:
+- change the border(s)
+- add border radius
+- shuffle the layout
+- shadows        🤯
+- hover effects  🤯🤯
+- animations     🤯🤯🤯
+*/
+
